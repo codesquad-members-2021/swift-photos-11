@@ -27,12 +27,18 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = mainCollectionView.dequeueReusableCell(withReuseIdentifier: "rectangleCell", for: indexPath)
-        
-        cell.backgroundColor = UIColor.init(red: CGFloat.random(in: 0...1),
-                                            green: CGFloat.random(in: 0...1),
-                                            blue:  CGFloat.random(in: 0...1),
-                                            alpha: 1.0)
+
+        cell.backgroundColor = UIColor.random()
         return cell
+    }
+}
+
+extension UIColor {
+    static func random() -> UIColor{
+        return UIColor(red: CGFloat.random(in: 0...1),
+                       green: CGFloat.random(in: 0...1),
+                       blue: CGFloat.random(in: 0...1),
+                       alpha: 1)
     }
 }
 
