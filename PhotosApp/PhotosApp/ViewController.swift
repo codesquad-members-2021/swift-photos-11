@@ -19,6 +19,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 40
     }
@@ -26,11 +27,17 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = mainCollectionView.dequeueReusableCell(withReuseIdentifier: "rectangleCell", for: indexPath)
         
+        let randomR = CGFloat.random(in: 0...1)
+        let randomG = CGFloat.random(in: 0...1)
+        let randomB = CGFloat.random(in: 0...1)
+        
+        cell.backgroundColor = UIColor.init(red: randomR, green: randomG, blue: randomB, alpha: 1.0)
         return cell
     }
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 80, height: 80)
     }
