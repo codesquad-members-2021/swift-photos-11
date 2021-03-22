@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var mainCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,11 +28,10 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = mainCollectionView.dequeueReusableCell(withReuseIdentifier: "rectangleCell", for: indexPath)
         
-        let randomR = CGFloat.random(in: 0...1)
-        let randomG = CGFloat.random(in: 0...1)
-        let randomB = CGFloat.random(in: 0...1)
-        
-        cell.backgroundColor = UIColor.init(red: randomR, green: randomG, blue: randomB, alpha: 1.0)
+        cell.backgroundColor = UIColor.init(red: CGFloat.random(in: 0...1),
+                                            green: CGFloat.random(in: 0...1),
+                                            blue:  CGFloat.random(in: 0...1),
+                                            alpha: 1.0)
         return cell
     }
 }
