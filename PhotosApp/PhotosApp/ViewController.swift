@@ -23,8 +23,14 @@ class ViewController: UIViewController {
         self.mainCollectionView.delegate = self
         self.mainCollectionView.dataSource = self
         
+//        let cameraRoll : PHFetchResult<PHAssetCollection> = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil)
+//                guard let cameraRollCollection = cameraRoll.firstObject else { return }
+        
+//        self.allPhotos = PHAsset.fetchAssets(in: cameraRollCollection, options: .none)
+        
         self.allPhotos = PHAsset.fetchAssets(with: .image, options: .none)
         self.imageManager = PHCachingImageManager()
+        self.mainCollectionView.reloadData()
     }
 }
 
@@ -41,7 +47,7 @@ extension ViewController: UICollectionViewDataSource {
         }
         
         if let asset = self.allPhotos?[indexPath.item] {
-            imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: .none, resultHandler: { (image, info) in
+            imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFit, options: .none, resultHandler: { (image, info) in
                 cell.configure(with: image)
             })
         }
