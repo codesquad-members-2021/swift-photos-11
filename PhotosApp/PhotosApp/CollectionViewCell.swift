@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import Photos
 
 class CollectionViewCell: UICollectionViewCell {
-    static let identifier = "rectangleCell"
-   
+    @IBOutlet weak var cellImageView: UIImageView!
+    
     private let randomColor: UIColor = {
         let randomRed:CGFloat = CGFloat(drand48())
         let randomGreen:CGFloat = CGFloat(drand48())
@@ -17,17 +18,14 @@ class CollectionViewCell: UICollectionViewCell {
         return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
     }()
     
-//    private let pictureView: UIImageView = {
-//        let imageView = UIImageView()
-//        imageView.image = UIImage(systemName: <#T##String#>)
-//        return imageView
-//    }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        contentView.backgroundColor = randomColor
+    override func awakeFromNib() {
+        
+        super.awakeFromNib()
+        self.cellImageView.contentMode = .scaleAspectFill
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }}
+    func configure(with image: UIImage?) {
+        self.cellImageView.image = image
+    }
+    
+}
