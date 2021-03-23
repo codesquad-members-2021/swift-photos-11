@@ -41,9 +41,12 @@ extension ViewController: UICollectionViewDataSource {
         if let asset = self.allPhotos?[indexPath.item] {
             LocalImageManager.shared.requestImage(with: asset, thumbnailSize: self.thumbnailSize, completion: {image in cell.configure(with: image)})
         }
-        
-        
         return cell
+    }
+    
+    // 편집 가능한지 요청하는 메소드
+    func collectionView(_ collectionView: UICollectionView, canEditItemAt indexPath: IndexPath) -> Bool {
+        return true
     }
 }
 
@@ -78,3 +81,13 @@ class LocalImageManager {
     }
 }
 
+extension ViewController: PHPhotoLibraryChangeObserver {
+    func photoLibraryDidChange(_ changeInstance: PHChange) {
+        if let changed = changeInstance.changeDetails(for: allPhotos!){
+            allPhotos = changed.fetchResultAfterChanges
+        }
+        DispatchQueue.main.sync {
+            self.mainCollectionView.reloadData()
+        }
+    }
+}
