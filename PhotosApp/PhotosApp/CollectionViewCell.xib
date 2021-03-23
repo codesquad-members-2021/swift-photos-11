@@ -16,13 +16,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ONk-Bf-BKD">
-                        <rect key="frame" x="-95" y="-39" width="240" height="128"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ONk-Bf-BKD">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="ONk-Bf-BKD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="LAT-08-9q3"/>
+                <constraint firstAttribute="trailing" secondItem="ONk-Bf-BKD" secondAttribute="trailing" id="o81-MZ-IgQ"/>
+                <constraint firstAttribute="bottom" secondItem="ONk-Bf-BKD" secondAttribute="bottom" id="t2M-Wa-kQ5"/>
+                <constraint firstItem="ONk-Bf-BKD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="w0J-FE-HtF"/>
+            </constraints>
             <connections>
                 <outlet property="cellImageView" destination="ONk-Bf-BKD" id="eRl-iW-Rpw"/>
             </connections>

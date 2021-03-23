@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     //MARK: - Properties
     @IBOutlet weak var mainCollectionView: UICollectionView!
     var allPhotos: PHFetchResult<PHAsset>?
-    var thumbnailSize: CGSize = CGSize(width: 100, height: 100)
+    let imageManager = PHCachingImageManager()
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -24,8 +24,14 @@ class ViewController: UIViewController {
         
         let nibName = UINib(nibName: "CollectionViewCell", bundle: nil)
         mainCollectionView.register(nibName, forCellWithReuseIdentifier: "CollectionViewCell")
-        self.allPhotos = PHAsset.fetchAssets(with: .image, options: .none)
+        requestImage()
         self.mainCollectionView.reloadData()
+    }
+    
+    func requestImage() {
+        let fetchOptions = PHFetchOptions()
+        fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        self.allPhotos = PHAsset.fetchAssets(with: fetchOptions)
     }
 }
 
@@ -37,10 +43,10 @@ extension ViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = mainCollectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell else { return UICollectionViewCell() }
-        if let asset = self.allPhotos?[indexPath.item] {
-            LocalImageManager.shared.requestImage(with: asset, thumbnailSize: self.thumbnailSize, completion: {image in cell.configure(with: image)})
-        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
+        
+        let asset: PHAsset = allPhotos!.object(at: indexPath.row)
+        imageManager.requestImage(for: asset, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFill, options: nil, resultHandler: {image, _ in cell.cellImageView.image = image})
         return cell
     }
     
@@ -53,31 +59,12 @@ extension ViewController: UICollectionViewDataSource {
 extension ViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
+        let width = collectionView.frame.width / 4 - 10
+        return CGSize(width: width, height: width)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-}
-
-class LocalImageManager {
-    static var shared = LocalImageManager()
-    fileprivate let imageManager = PHCachingImageManager()
-    var representIdentifier: String?
-    var size: CGSize = CGSize(width: 100, height: 100)
-    
-    func requestImage(with asset: PHAsset?, thumbnailSize: CGSize, completion: @escaping (UIImage?) -> Void) {
-        guard let asset = asset else { completion(nil)
-            return
-        }
-        self.representIdentifier = asset.localIdentifier
-        self.imageManager.requestImage(for: asset, targetSize: size, contentMode: .aspectFit, options: .none, resultHandler: {image, info in completion(image)
-        })
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     }
 }
 
