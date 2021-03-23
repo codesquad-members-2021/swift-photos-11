@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        PHPhotoLibrary.shared().register(self)
         self.mainCollectionView.register(ImageCollectionViewCell.nib(),
                                          forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
         self.mainCollectionView.delegate = self
@@ -25,7 +25,6 @@ class ViewController: UIViewController {
         
         self.allPhotos = PHAsset.fetchAssets(with: .image, options: .none)
         self.imageManager = PHCachingImageManager()
-        self.mainCollectionView.reloadData()
     }
 }
 
@@ -57,3 +56,14 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension ViewController: PHPhotoLibraryChangeObserver {
+    func photoLibraryDidChange(_ changeInstance: PHChange) {
+        if let changed = changeInstance.changeDetails(for: self.allPhotos!) {
+            self.allPhotos = changed.fetchResultAfterChanges
+        }
+        
+        DispatchQueue.main.sync {
+            self.mainCollectionView.reloadData()
+        }
+    }
+}
