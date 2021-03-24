@@ -47,7 +47,7 @@ extension ViewController: UICollectionViewDataSource {
         }
         
         if let asset = self.allPhotos?[indexPath.item] {
-            imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFit, options: .none, resultHandler: { (image, info) in
+            imageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: .none, resultHandler: { (image, info) in
                 cell.configure(with: image)
             })
         }
@@ -68,7 +68,7 @@ extension ViewController: PHPhotoLibraryChangeObserver {
             self.allPhotos = changed.fetchResultAfterChanges
         }
         
-        DispatchQueue.main.sync {
+        DispatchQueue.main.async {
             self.mainCollectionView.reloadData()
         }
     }
