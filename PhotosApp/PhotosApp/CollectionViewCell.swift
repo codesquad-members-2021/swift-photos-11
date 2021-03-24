@@ -6,24 +6,19 @@
 //
 
 import UIKit
-import Photos
 
 class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var cellImageView: UIImageView!
+    static let identifier = "CollectionViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.cellImageView.contentMode = .scaleAspectFill
+        cellImageView.contentMode = .scaleToFill
     }
     
-}
-
-extension UIColor {
-    static func makeRandomColor() -> UIColor {
-        let randomRed:CGFloat = CGFloat(drand48())
-        let randomGreen:CGFloat = CGFloat(drand48())
-        let randomBlue:CGFloat = CGFloat(drand48())
-        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
+    static func nib() -> UINib {
+        return UINib(nibName: identifier, bundle: nil)
     }
+    
 }

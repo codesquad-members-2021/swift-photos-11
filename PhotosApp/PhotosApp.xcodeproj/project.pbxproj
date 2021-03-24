@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BD40D1922609B5A200A02F46 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD40D1902609B5A200A02F46 /* CollectionViewCell.swift */; };
 		BD40D1932609B5A200A02F46 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD40D1912609B5A200A02F46 /* CollectionViewCell.xib */; };
+		BD40D198260ACD1C00A02F46 /* ExtentionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD40D197260ACD1C00A02F46 /* ExtentionUIColor.swift */; };
 		D4258B6C26086153006EDA08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4258B6B26086153006EDA08 /* AppDelegate.swift */; };
 		D4258B6E26086153006EDA08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4258B6D26086153006EDA08 /* SceneDelegate.swift */; };
 		D4258B7026086153006EDA08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4258B6F26086153006EDA08 /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		BD40D1902609B5A200A02F46 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		BD40D1912609B5A200A02F46 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		BD40D197260ACD1C00A02F46 /* ExtentionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionUIColor.swift; sourceTree = "<group>"; };
 		D4258B6826086153006EDA08 /* PhotosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4258B6B26086153006EDA08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4258B6D26086153006EDA08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				D4258B6D26086153006EDA08 /* SceneDelegate.swift */,
 				D4258B6F26086153006EDA08 /* ViewController.swift */,
 				BD40D1902609B5A200A02F46 /* CollectionViewCell.swift */,
+				BD40D197260ACD1C00A02F46 /* ExtentionUIColor.swift */,
 				BD40D1912609B5A200A02F46 /* CollectionViewCell.xib */,
 				D4258B7126086153006EDA08 /* Main.storyboard */,
 				D4258B7426086155006EDA08 /* Assets.xcassets */,
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4258B7026086153006EDA08 /* ViewController.swift in Sources */,
+				BD40D198260ACD1C00A02F46 /* ExtentionUIColor.swift in Sources */,
 				D4258B6C26086153006EDA08 /* AppDelegate.swift in Sources */,
 				BD40D1922609B5A200A02F46 /* CollectionViewCell.swift in Sources */,
 				D4258B6E26086153006EDA08 /* SceneDelegate.swift in Sources */,
