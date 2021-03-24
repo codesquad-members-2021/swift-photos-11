@@ -17,3 +17,23 @@ iOS 연습 - 11팀(Min, Aiden)
 
 ### 완성날짜
 * 2021-03-22
+
+
+## Step2
+
+### 요구사항
+* UINavigationController를 Embed시키고, 타이틀을 'Photos'로 지정한다.
+
+* PHAsset 프레임워크를 사용해서 사진보관함에 있는 사진 이미지를 Cell에 표시한다.
+
+* PHCachingImageManager 클래스를 활용해서 썸네일 이미지를 100 x 100 크기로 생성해서 Cell에 표시한다.
+
+* PHPhotoLibrary 클래스에 사진보관함이 변경되는지 여부를 옵저버로 등록한다.
+
+
+### 실행결과
+
+![Simulator Screen Shot - iPhone 12 - 2021-03-24 at 14 47 47](https://user-images.githubusercontent.com/73586326/112262801-93b2ca00-8cb1-11eb-8aaa-4ee1a92a16d8.png)
+
+### 완성날짜
+* 2021-03-24
