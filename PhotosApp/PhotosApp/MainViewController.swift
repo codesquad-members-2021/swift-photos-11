@@ -8,13 +8,14 @@
 import UIKit
 import Photos
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     //MARK: - Properties
     @IBOutlet weak var mainCollectionView: UICollectionView!
     var allPhotos: PHFetchResult<PHAsset>?
     let imageManager = PHCachingImageManager()
     
+    private var delegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class ViewController: UIViewController {
         mainCollectionView.register(CollectionViewCell.nib(), forCellWithReuseIdentifier: CollectionViewCell.identifier)
         requestImage()
         self.mainCollectionView.reloadData()
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(viewDoodleView))
     }
     
     //MARK: - fetchAssets 메소드
@@ -32,10 +34,14 @@ class ViewController: UIViewController {
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
         self.allPhotos = PHAsset.fetchAssets(with: fetchOptions)
     }
+    
+    @objc func viewDoodleView() {
+        self.present(delegate.navigationController, animated: true, completion: nil)
+    }
 }
 
 //MARK: - UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
-extension ViewController: UICollectionViewDataSource {
+extension MainViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.allPhotos?.count ?? 0
@@ -51,7 +57,7 @@ extension ViewController: UICollectionViewDataSource {
     
 }
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension MainViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width / 4 - 10
@@ -63,7 +69,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension ViewController: PHPhotoLibraryChangeObserver {
+extension MainViewController: PHPhotoLibraryChangeObserver {
     func photoLibraryDidChange(_ changeInstance: PHChange) {
         if let changed = changeInstance.changeDetails(for: allPhotos!){
             allPhotos = changed.fetchResultAfterChanges
