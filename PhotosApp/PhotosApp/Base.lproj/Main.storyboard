@@ -44,7 +44,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Photos" id="c8K-d7-XZm">
-                        <barButtonItem key="rightBarButtonItem" title="Done" image="plus" catalog="system" id="TR9-Sv-HsY"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" image="plus" catalog="system" id="TR9-Sv-HsY">
+                            <connections>
+                                <action selector="moveToDoodleButtonTouched:" destination="BYZ-38-t0r" id="jXb-zm-ZWF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mainCollectionView" destination="utY-cp-fGs" id="cCJ-FR-rKu"/>

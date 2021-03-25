@@ -7,66 +7,50 @@
 
 import UIKit
 
-class DoodleCollectionViewController: UICollectionViewController {
+class DoodleCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    private var pictures: [Picture]!
 
-    @IBOutlet var doodleCollectionView: UICollectionView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.collectionView!.register(DoodleCell.nib(), forCellWithReuseIdentifier: DoodleCell.identifier)
+        
+        self.collectionView.backgroundColor = .systemGray2
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        self.title = "Doodle"
+        self.collectionView.register(DoodleCell.nib(), forCellWithReuseIdentifier: DoodleCell.identifier)
+        self.navigationItem.rightBarButtonItem?.title = "close"
+        pictures = decodeJSON()
     }
-
-
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return pictures.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DoodleCell.identifier, for: indexPath)
-    
-        // Configure the cell
-    
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DoodleCell.identifier, for: indexPath) as? DoodleCell else {
+            return UICollectionViewCell()
+        }
+        
+        DispatchQueue.main.async {
+            let url = URL(string: "\(self.pictures[indexPath.item].image)")
+            let data = try? Data(contentsOf: url!)
+            cell.configure(with: UIImage(data: data!))
+        }
+        
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 110, height: 50)
     }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    func decodeJSON() -> [Picture]?{
+        let decoder = JSONDecoder()
+        let url = Bundle.main.url(forResource: "doodle", withExtension: "json")!
+        
+        guard let data = try? Data(contentsOf: url),
+              let picture = try? decoder.decode([Picture].self, from: data) else {
+            return nil
+        }
+        return picture
     }
-    */
-
 }

@@ -16,26 +16,24 @@ class ViewController: UIViewController {
     private var thumbnailSize = CGSize(width: 100, height: 100)
     private var pictures: [Picture]!
     
-    
+    private var delegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
-        print("메인")
+
         super.viewDidLoad()
         PHPhotoLibrary.shared().register(self)
         self.mainCollectionView.register(ImageCollectionViewCell.nib(),
                                          forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
         self.mainCollectionView.delegate = self
         self.mainCollectionView.dataSource = self
-        
-//        let cameraRoll : PHFetchResult<PHAssetCollection> = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil)
-//                guard let cameraRollCollection = cameraRoll.firstObject else { return }
-        
-//        self.allPhotos = PHAsset.fetchAssets(in: cameraRollCollection, options: .none)
-        
+    
         self.allPhotos = PHAsset.fetchAssets(with: .image, options: .none)
         
         self.imageManager = PHCachingImageManager()
         self.mainCollectionView.reloadData()
         
+    }
+    @IBAction func moveToDoodleButtonTouched(_ sender: UIBarButtonItem) {
+        self.present(delegate.navigationController, animated: true, completion: nil)
     }
 }
 

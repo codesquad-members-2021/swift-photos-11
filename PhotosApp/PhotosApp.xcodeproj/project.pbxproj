@@ -17,7 +17,6 @@
 		D4258B8E26086155006EDA08 /* PhotosAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4258B8D26086155006EDA08 /* PhotosAppUITests.swift */; };
 		D4A06941260B0F0B00E25C1C /* doodle.json in Resources */ = {isa = PBXBuildFile; fileRef = D4A06940260B0F0B00E25C1C /* doodle.json */; };
 		D4A06952260B164600E25C1C /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A06951260B164600E25C1C /* Picture.swift */; };
-		D4A069A2260B782300E25C1C /* DoodleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A069A1260B782300E25C1C /* DoodleViewController.swift */; };
 		D4A069B2260B798500E25C1C /* DoodleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A069B0260B798500E25C1C /* DoodleCell.swift */; };
 		D4A069B3260B798500E25C1C /* DoodleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4A069B1260B798500E25C1C /* DoodleCell.xib */; };
 		D4A069B8260C231200E25C1C /* DoodleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A069B7260C231200E25C1C /* DoodleCollectionViewController.swift */; };
@@ -60,7 +59,6 @@
 		D4258B8F26086155006EDA08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4A06940260B0F0B00E25C1C /* doodle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = doodle.json; sourceTree = "<group>"; };
 		D4A06951260B164600E25C1C /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
-		D4A069A1260B782300E25C1C /* DoodleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleViewController.swift; sourceTree = "<group>"; };
 		D4A069B0260B798500E25C1C /* DoodleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleCell.swift; sourceTree = "<group>"; };
 		D4A069B1260B798500E25C1C /* DoodleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoodleCell.xib; sourceTree = "<group>"; };
 		D4A069B7260C231200E25C1C /* DoodleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleCollectionViewController.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 				D4258B7626086155006EDA08 /* LaunchScreen.storyboard */,
 				D4258B7926086155006EDA08 /* Info.plist */,
 				D4A06951260B164600E25C1C /* Picture.swift */,
-				D4A069A1260B782300E25C1C /* DoodleViewController.swift */,
 				D4A069B0260B798500E25C1C /* DoodleCell.swift */,
 				D4A069B1260B798500E25C1C /* DoodleCell.xib */,
 				D4A069B7260C231200E25C1C /* DoodleCollectionViewController.swift */,
@@ -301,7 +298,6 @@
 				D4A069B2260B798500E25C1C /* DoodleCell.swift in Sources */,
 				D4B9E278260A10A6004381A8 /* ImageCollectionViewCell.swift in Sources */,
 				D4258B6C26086153006EDA08 /* AppDelegate.swift in Sources */,
-				D4A069A2260B782300E25C1C /* DoodleViewController.swift in Sources */,
 				D4258B6E26086153006EDA08 /* SceneDelegate.swift in Sources */,
 				D4A069B8260C231200E25C1C /* DoodleCollectionViewController.swift in Sources */,
 				D4B9E272260A1077004381A8 /* ExtensionUIColor.swift in Sources */,
