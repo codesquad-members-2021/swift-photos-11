@@ -9,12 +9,12 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var ImageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     static let identifier = "CollectionViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        ImageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleToFill
     }
     
     static let nib = {
@@ -22,7 +22,7 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with image: UIImage?) {
-        self.ImageView.image = image
+        self.imageView.image = image
     }
     
 }

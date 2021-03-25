@@ -29,7 +29,7 @@
                 <constraint firstItem="ONk-Bf-BKD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="w0J-FE-HtF"/>
             </constraints>
             <connections>
-                <outlet property="cellImageView" destination="ONk-Bf-BKD" id="eRl-iW-Rpw"/>
+                <outlet property="imageView" destination="ONk-Bf-BKD" id="6sn-7P-g8A"/>
             </connections>
             <point key="canvasLocation" x="-210.1449275362319" y="94.419642857142847"/>
         </collectionViewCell>

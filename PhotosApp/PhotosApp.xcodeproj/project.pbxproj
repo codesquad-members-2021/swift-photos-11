@@ -22,6 +22,8 @@
 		D4A069D2260C709E00E25C1C /* DoodleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A069D0260C709E00E25C1C /* DoodleCell.swift */; };
 		D4A069D3260C709E00E25C1C /* DoodleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4A069D1260C709E00E25C1C /* DoodleCell.xib */; };
 		D4A069D8260C73C400E25C1C /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A069D7260C73C400E25C1C /* Picture.swift */; };
+		D4A069DD260C743600E25C1C /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A069DC260C743600E25C1C /* ImageManager.swift */; };
+		D4A069E3260C749E00E25C1C /* doodle.json in Resources */ = {isa = PBXBuildFile; fileRef = D4A069E2260C749E00E25C1C /* doodle.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		D4A069D0260C709E00E25C1C /* DoodleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleCell.swift; sourceTree = "<group>"; };
 		D4A069D1260C709E00E25C1C /* DoodleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoodleCell.xib; sourceTree = "<group>"; };
 		D4A069D7260C73C400E25C1C /* Picture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
+		D4A069DC260C743600E25C1C /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		D4A069E2260C749E00E25C1C /* doodle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = doodle.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 		D4258B5F26086153006EDA08 = {
 			isa = PBXGroup;
 			children = (
+				D4A069E1260C747700E25C1C /* Data */,
 				D4258B6A26086153006EDA08 /* PhotosApp */,
 				D4258B8126086155006EDA08 /* PhotosAppTests */,
 				D4258B8C26086155006EDA08 /* PhotosAppUITests */,
@@ -123,6 +128,7 @@
 				BD40D1912609B5A200A02F46 /* CollectionViewCell.xib */,
 				D4258B7126086153006EDA08 /* Main.storyboard */,
 				D4A069C8260C5D1900E25C1C /* DoodleCollectionViewController.swift */,
+				D4A069DC260C743600E25C1C /* ImageManager.swift */,
 				D4258B7426086155006EDA08 /* Assets.xcassets */,
 				D4258B7626086155006EDA08 /* LaunchScreen.storyboard */,
 				D4258B7926086155006EDA08 /* Info.plist */,
@@ -147,6 +153,14 @@
 				D4258B8F26086155006EDA08 /* Info.plist */,
 			);
 			path = PhotosAppUITests;
+			sourceTree = "<group>";
+		};
+		D4A069E1260C747700E25C1C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D4A069E2260C749E00E25C1C /* doodle.json */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A069E3260C749E00E25C1C /* doodle.json in Resources */,
 				D4258B7826086155006EDA08 /* LaunchScreen.storyboard in Resources */,
 				D4258B7526086155006EDA08 /* Assets.xcassets in Resources */,
 				BD40D1932609B5A200A02F46 /* CollectionViewCell.xib in Resources */,
@@ -286,6 +301,7 @@
 				D4258B6C26086153006EDA08 /* AppDelegate.swift in Sources */,
 				BD40D1922609B5A200A02F46 /* CollectionViewCell.swift in Sources */,
 				D4A069D8260C73C400E25C1C /* Picture.swift in Sources */,
+				D4A069DD260C743600E25C1C /* ImageManager.swift in Sources */,
 				D4A069D2260C709E00E25C1C /* DoodleCell.swift in Sources */,
 				D4258B6E26086153006EDA08 /* SceneDelegate.swift in Sources */,
 				D4A069C9260C5D1900E25C1C /* DoodleCollectionViewController.swift in Sources */,
