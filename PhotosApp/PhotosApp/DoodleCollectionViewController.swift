@@ -18,7 +18,7 @@ class DoodleCollectionViewController: UICollectionViewController, UICollectionVi
         self.collectionView.dataSource = self
         self.title = "Doodle"
         self.collectionView.register(DoodleCell.nib(), forCellWithReuseIdentifier: DoodleCell.identifier)
-        self.navigationItem.rightBarButtonItem?.title = "close"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(backToPage))
         pictures = decodeJSON()
     }
 
@@ -39,6 +39,7 @@ class DoodleCollectionViewController: UICollectionViewController, UICollectionVi
         
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 110, height: 50)
     }
@@ -52,5 +53,9 @@ class DoodleCollectionViewController: UICollectionViewController, UICollectionVi
             return nil
         }
         return picture
+    }
+    
+    @objc func backToPage() {
+        self.dismiss(animated: true, completion: nil)
     }
 }
