@@ -44,7 +44,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Photos" id="c8K-d7-XZm">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="TR9-Sv-HsY"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" image="plus" catalog="system" id="TR9-Sv-HsY"/>
                     </navigationItem>
                     <connections>
                         <outlet property="mainCollectionView" destination="utY-cp-fGs" id="cCJ-FR-rKu"/>
@@ -52,7 +52,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="923.1884057971015" y="88.392857142857139"/>
+            <point key="canvasLocation" x="839" y="88"/>
+        </scene>
+        <!--Doodle Collection View Controller-->
+        <scene sceneID="8qB-cC-pY8">
+            <objects>
+                <collectionViewController id="dP3-nJ-H4K" customClass="DoodleCollectionViewController" customModule="PhotosApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="iSY-gt-edx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zVL-dM-9Et">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="x6L-xn-sqq">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BzJ-o5-HWx">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="dP3-nJ-H4K" id="9dy-WY-5DO"/>
+                            <outlet property="delegate" destination="dP3-nJ-H4K" id="iFv-22-wMf"/>
+                        </connections>
+                    </collectionView>
+                    <connections>
+                        <outlet property="doodleCollectionView" destination="iSY-gt-edx" id="5VX-Vd-QVQ"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LUA-ki-05b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1684" y="88"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XKJ-sx-WVL">
@@ -74,6 +111,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -14,8 +14,11 @@ class ViewController: UIViewController {
     private var allPhotos: PHFetchResult<PHAsset>?
     private var imageManager: PHCachingImageManager!
     private var thumbnailSize = CGSize(width: 100, height: 100)
+    private var pictures: [Picture]!
+    
     
     override func viewDidLoad() {
+        print("메인")
         super.viewDidLoad()
         PHPhotoLibrary.shared().register(self)
         self.mainCollectionView.register(ImageCollectionViewCell.nib(),
@@ -29,8 +32,10 @@ class ViewController: UIViewController {
 //        self.allPhotos = PHAsset.fetchAssets(in: cameraRollCollection, options: .none)
         
         self.allPhotos = PHAsset.fetchAssets(with: .image, options: .none)
+        
         self.imageManager = PHCachingImageManager()
         self.mainCollectionView.reloadData()
+        
     }
 }
 
