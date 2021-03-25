@@ -19,6 +19,8 @@
 		D4258B8326086155006EDA08 /* PhotosAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4258B8226086155006EDA08 /* PhotosAppTests.swift */; };
 		D4258B8E26086155006EDA08 /* PhotosAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4258B8D26086155006EDA08 /* PhotosAppUITests.swift */; };
 		D4A069C9260C5D1900E25C1C /* DoodleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A069C8260C5D1900E25C1C /* DoodleCollectionViewController.swift */; };
+		D4A069D2260C709E00E25C1C /* DoodleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A069D0260C709E00E25C1C /* DoodleCell.swift */; };
+		D4A069D3260C709E00E25C1C /* DoodleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4A069D1260C709E00E25C1C /* DoodleCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		D4258B8D26086155006EDA08 /* PhotosAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAppUITests.swift; sourceTree = "<group>"; };
 		D4258B8F26086155006EDA08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4A069C8260C5D1900E25C1C /* DoodleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleCollectionViewController.swift; sourceTree = "<group>"; };
+		D4A069D0260C709E00E25C1C /* DoodleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoodleCell.swift; sourceTree = "<group>"; };
+		D4A069D1260C709E00E25C1C /* DoodleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DoodleCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 				D4258B6D26086153006EDA08 /* SceneDelegate.swift */,
 				D4258B6F26086153006EDA08 /* MainViewController.swift */,
 				BD40D1902609B5A200A02F46 /* CollectionViewCell.swift */,
+				D4A069D0260C709E00E25C1C /* DoodleCell.swift */,
+				D4A069D1260C709E00E25C1C /* DoodleCell.xib */,
 				BD40D197260ACD1C00A02F46 /* ExtentionUIColor.swift */,
 				BD40D1912609B5A200A02F46 /* CollectionViewCell.xib */,
 				D4258B7126086153006EDA08 /* Main.storyboard */,
@@ -246,6 +252,7 @@
 				D4258B7826086155006EDA08 /* LaunchScreen.storyboard in Resources */,
 				D4258B7526086155006EDA08 /* Assets.xcassets in Resources */,
 				BD40D1932609B5A200A02F46 /* CollectionViewCell.xib in Resources */,
+				D4A069D3260C709E00E25C1C /* DoodleCell.xib in Resources */,
 				D4258B7326086153006EDA08 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +282,7 @@
 				BD40D198260ACD1C00A02F46 /* ExtentionUIColor.swift in Sources */,
 				D4258B6C26086153006EDA08 /* AppDelegate.swift in Sources */,
 				BD40D1922609B5A200A02F46 /* CollectionViewCell.swift in Sources */,
+				D4A069D2260C709E00E25C1C /* DoodleCell.swift in Sources */,
 				D4258B6E26086153006EDA08 /* SceneDelegate.swift in Sources */,
 				D4A069C9260C5D1900E25C1C /* DoodleCollectionViewController.swift in Sources */,
 			);

@@ -9,16 +9,20 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var cellImageView: UIImageView!
+    @IBOutlet weak var ImageView: UIImageView!
     static let identifier = "CollectionViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        cellImageView.contentMode = .scaleToFill
+        ImageView.contentMode = .scaleToFill
     }
     
-    static func nib() -> UINib {
+    static let nib = {
         return UINib(nibName: identifier, bundle: nil)
+    }
+    
+    func configure(with image: UIImage?) {
+        self.ImageView.image = image
     }
     
 }
