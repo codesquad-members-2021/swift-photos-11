@@ -51,7 +51,13 @@ extension MainViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
         
         let asset: PHAsset = allPhotos!.object(at: indexPath.row)
-        imageManager.requestImage(for: asset, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFill, options: nil, resultHandler: {image, _ in cell.cellImageView.image = image})
+        imageManager.requestImage(for: asset,
+                                  targetSize: CGSize(width: 100, height: 100),
+                                  contentMode: .aspectFill,
+                                  options: nil,
+                                  resultHandler: { (image, _) in
+                                        cell.configure(with: image)
+                                  })
         return cell
     }
     
