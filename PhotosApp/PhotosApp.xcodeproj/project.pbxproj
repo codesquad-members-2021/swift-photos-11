@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BD40D1922609B5A200A02F46 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD40D1902609B5A200A02F46 /* CollectionViewCell.swift */; };
-		BD40D1932609B5A200A02F46 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD40D1912609B5A200A02F46 /* CollectionViewCell.xib */; };
+		BD40D1922609B5A200A02F46 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD40D1902609B5A200A02F46 /* MainCollectionViewCell.swift */; };
+		BD40D1932609B5A200A02F46 /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD40D1912609B5A200A02F46 /* MainCollectionViewCell.xib */; };
 		BD40D198260ACD1C00A02F46 /* ExtentionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD40D197260ACD1C00A02F46 /* ExtentionUIColor.swift */; };
 		D4258B6C26086153006EDA08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4258B6B26086153006EDA08 /* AppDelegate.swift */; };
 		D4258B6E26086153006EDA08 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4258B6D26086153006EDA08 /* SceneDelegate.swift */; };
@@ -44,8 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BD40D1902609B5A200A02F46 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		BD40D1912609B5A200A02F46 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		BD40D1902609B5A200A02F46 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		BD40D1912609B5A200A02F46 /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
 		BD40D197260ACD1C00A02F46 /* ExtentionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionUIColor.swift; sourceTree = "<group>"; };
 		D4258B6826086153006EDA08 /* PhotosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4258B6B26086153006EDA08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,11 +121,11 @@
 				D4258B6B26086153006EDA08 /* AppDelegate.swift */,
 				D4258B6D26086153006EDA08 /* SceneDelegate.swift */,
 				D4258B6F26086153006EDA08 /* MainViewController.swift */,
-				BD40D1902609B5A200A02F46 /* CollectionViewCell.swift */,
+				BD40D1902609B5A200A02F46 /* MainCollectionViewCell.swift */,
 				D4A069D0260C709E00E25C1C /* DoodleCell.swift */,
 				D4A069D1260C709E00E25C1C /* DoodleCell.xib */,
 				BD40D197260ACD1C00A02F46 /* ExtentionUIColor.swift */,
-				BD40D1912609B5A200A02F46 /* CollectionViewCell.xib */,
+				BD40D1912609B5A200A02F46 /* MainCollectionViewCell.xib */,
 				D4258B7126086153006EDA08 /* Main.storyboard */,
 				D4A069C8260C5D1900E25C1C /* DoodleCollectionViewController.swift */,
 				D4A069DC260C743600E25C1C /* ImageManager.swift */,
@@ -269,7 +269,7 @@
 				D4A069E3260C749E00E25C1C /* doodle.json in Resources */,
 				D4258B7826086155006EDA08 /* LaunchScreen.storyboard in Resources */,
 				D4258B7526086155006EDA08 /* Assets.xcassets in Resources */,
-				BD40D1932609B5A200A02F46 /* CollectionViewCell.xib in Resources */,
+				BD40D1932609B5A200A02F46 /* MainCollectionViewCell.xib in Resources */,
 				D4A069D3260C709E00E25C1C /* DoodleCell.xib in Resources */,
 				D4258B7326086153006EDA08 /* Main.storyboard in Resources */,
 			);
@@ -299,7 +299,7 @@
 				D4258B7026086153006EDA08 /* MainViewController.swift in Sources */,
 				BD40D198260ACD1C00A02F46 /* ExtentionUIColor.swift in Sources */,
 				D4258B6C26086153006EDA08 /* AppDelegate.swift in Sources */,
-				BD40D1922609B5A200A02F46 /* CollectionViewCell.swift in Sources */,
+				BD40D1922609B5A200A02F46 /* MainCollectionViewCell.swift in Sources */,
 				D4A069D8260C73C400E25C1C /* Picture.swift in Sources */,
 				D4A069DD260C743600E25C1C /* ImageManager.swift in Sources */,
 				D4A069D2260C709E00E25C1C /* DoodleCell.swift in Sources */,

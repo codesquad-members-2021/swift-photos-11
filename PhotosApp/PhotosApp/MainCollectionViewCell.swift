@@ -7,10 +7,10 @@
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
+class MainCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
-    static let identifier = "CollectionViewCell"
+    static let identifier = "MainCollectionViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()

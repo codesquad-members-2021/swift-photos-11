@@ -11,5 +11,5 @@ struct Picture: Codable {
     private var title: String
     private var date: String
     var image: String
-    
+
 }

@@ -7,19 +7,13 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
-
 class DoodleCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     private var imageManager: ImageManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageManager = ImageManager()
-        imageManager.decodeJSON()
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
-        self.collectionView!.register(DoodleCell.nib(), forCellWithReuseIdentifier: DoodleCell.identifier)
+        setImageManager()
         setCollectionView()
     }
 
@@ -28,7 +22,7 @@ class DoodleCollectionViewController: UICollectionViewController, UICollectionVi
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("여기?")
+        
         guard let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: DoodleCell.identifier, for: indexPath) as? DoodleCell else{
             return UICollectionViewCell()
         }
@@ -48,7 +42,20 @@ class DoodleCollectionViewController: UICollectionViewController, UICollectionVi
     }
     
     func setCollectionView() {
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        self.collectionView!.register(DoodleCell.nib(), forCellWithReuseIdentifier: DoodleCell.identifier)
         self.title = "Doodle"
         self.collectionView.backgroundColor = .systemGray2
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(closeButtonTouched))
+    }
+    
+    func setImageManager() {
+        imageManager = ImageManager()
+        imageManager.decodeJSON()
+    }
+    
+    @objc func closeButtonTouched() {
+        self.dismiss(animated: true, completion: nil)
     }
 }
