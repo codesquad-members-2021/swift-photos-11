@@ -9,9 +9,13 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    var navigationController: UINavigationController!
+    var doodleCollectionViewController: DoodleCollectionViewController!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
+        doodleCollectionViewController = DoodleCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        navigationController = UINavigationController(rootViewController: doodleCollectionViewController)
         return true
     }
 
