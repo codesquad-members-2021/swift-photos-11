@@ -10,6 +10,7 @@ import UIKit
 class DoodleCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     private var imageManager: ImageManager!
+    private var menuItem: UIMenuItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
