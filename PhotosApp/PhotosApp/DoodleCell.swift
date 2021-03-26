@@ -27,8 +27,8 @@ class DoodleCell: UICollectionViewCell {
         UIMenuController.shared.showMenu(from: self, rect: self.bounds)
     }
     
-    @objc func saveImage() {
-        
+    @objc func saveImage(_ sender: UILongPressGestureRecognizer) {
+        UIImageWriteToSavedPhotosAlbum(imageView.image!, nil, nil, nil)
     }
     
     static let nib = {
