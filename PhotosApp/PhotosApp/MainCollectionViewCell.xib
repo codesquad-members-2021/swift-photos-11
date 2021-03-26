@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionViewCell" customModule="PhotosApp" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MainCollectionViewCell" customModule="PhotosApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -29,7 +29,7 @@
                 <constraint firstItem="ONk-Bf-BKD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="w0J-FE-HtF"/>
             </constraints>
             <connections>
-                <outlet property="cellImageView" destination="ONk-Bf-BKD" id="eRl-iW-Rpw"/>
+                <outlet property="imageView" destination="ONk-Bf-BKD" id="6sn-7P-g8A"/>
             </connections>
             <point key="canvasLocation" x="-210.1449275362319" y="94.419642857142847"/>
         </collectionViewCell>
