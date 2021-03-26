@@ -37,3 +37,24 @@ iOS 연습 - 11팀(Min, Aiden)
 
 ### 완성날짜
 * 2021-03-24
+
+## Step3
+
+### 요구사항
+* Bundle에서 doodle.json 파일을 읽어와서 스위프트 데이터 구조로 변환한다.
+
+* GCD 큐를 활용해서 동시에 최대한 효율적으로 여러 이미지를 다운로드 받아서 표시한다.
+
+* +(add) 버튼을 누르면 Modal로 CollectionViewController에서 상속받은 새로운 DoodleViewController를 표시한다.
+
+    * 반드시 코드로 NavigationController를 embed 한 상태로 present 시킨다.
+
+* 이미지를 전부 다운로드할 때까지 기다리지않고, 버튼을 누르는 즉시 ViewController 화면을 보여준다.
+
+* DoodleViewController 에서 특정 셀을 롱클릭하면 실행화면처럼 Save 액션을 하는 UIMenuItem을 표시한다.
+
+### 실행결과
+
+<img width="401" alt="스크린샷 2021-03-26 오후 2 25 54" src="https://user-images.githubusercontent.com/69951890/112586454-2e8cdf00-8e3f-11eb-9191-5f4e882dd0db.png">
+
+<img width="436" alt="스크린샷 2021-03-26 오후 2 24 30" src="https://user-images.githubusercontent.com/69951890/112586337-fbe2e680-8e3e-11eb-92c3-1369f37d78b1.png">
